@@ -1,0 +1,8 @@
+1706523948449|3|statement|connection 0|url jdbc:p6spy:mysql://localhost:3306/employees?useSSL=false|insert into employees (department,name,salary,surname,id) values (?,?,?,?,?)|insert into employees (department,name,salary,surname,id) values ('1','1',1,'1',0)
+1706523948455|2|commit|connection 0|url jdbc:p6spy:mysql://localhost:3306/employees?useSSL=false||
+1706524110315|3|statement|connection 0|url jdbc:p6spy:mysql://localhost:3306/employees?useSSL=false|insert into employees (department,name,salary,surname,id) values (?,?,?,?,?)|insert into employees (department,name,salary,surname,id) values ('1','1',1,'1',0)
+1706524110322|2|commit|connection 0|url jdbc:p6spy:mysql://localhost:3306/employees?useSSL=false||
+1706524267919|2|statement|connection 0|url jdbc:p6spy:mysql://localhost:3306/employees?useSSL=false|insert into employees (department,name,salary,surname,id) values (?,?,?,?,?)|insert into employees (department,name,salary,surname,id) values ('1','1',1,'1',0)
+1706524267924|1|commit|connection 0|url jdbc:p6spy:mysql://localhost:3306/employees?useSSL=false||
+1706524329275|1|statement|connection0|insert into employees (department,name,salary,surname,id) values ('1','1',1,'1',0)
+1706524329281|2|commit|connection0|

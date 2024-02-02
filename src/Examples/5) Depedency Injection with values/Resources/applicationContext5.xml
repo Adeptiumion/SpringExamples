@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    <bean id="Dog5"
+          class="Animals.Dog5">
+    </bean>
+
+    <bean id="Cat5"
+          class="Animals.Cat5">
+    </bean>
+
+    <!-- setPet3 -> pet3 -->
+    <bean id="Person4"
+          class="OtherClasses.Person4">
+        <property name="pet5" ref="Cat5"/>
+        <property name="surname" value="Danil Kvardakov"/>
+        <property name="age" value="22"/>
+    </bean>
+
+
+</beans>

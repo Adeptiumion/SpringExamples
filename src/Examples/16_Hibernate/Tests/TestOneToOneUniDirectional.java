@@ -10,7 +10,7 @@ import org.hibernate.Transaction;
 import java.util.List;
 
 public class TestOneToOneUniDirectional {
-    @UniDirectional
+    @UniDirectional(autor = "danil Gorev")
     public static void main(String[] args) {
         Util.setUrl("relationships_between_players_and_their_statistics");
         Transaction transaction = null;

@@ -10,7 +10,7 @@ import org.hibernate.Transaction;
 import java.util.List;
 
 public class TestOneToManyBiDirectional2 {
-    @BiDirectional
+    @BiDirectional(autor = "Danil Gorev")
     public static void main(String[] args) {
         Util.setUrl("developers_relationship");
         Transaction transaction = null;

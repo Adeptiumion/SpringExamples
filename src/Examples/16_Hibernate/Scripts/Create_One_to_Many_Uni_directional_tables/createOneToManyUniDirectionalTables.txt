@@ -1,0 +1,19 @@
+CREATE TABLE prostitution.bardel
+(
+    id         int NOT NULL AUTO_INCREMENT,
+    name       varchar(15),
+    max_salary int,
+    min_salary int,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE prostitution.whores
+(
+    id                  int NOT NULL AUTO_INCREMENT,
+    name                varchar(15),
+    surname             varchar(25),
+    salary              int,
+    bardel_id int,
+    PRIMARY KEY (id),
+    FOREIGN KEY (bardel_id) REFERENCES prostitution.bardel (id)
+);

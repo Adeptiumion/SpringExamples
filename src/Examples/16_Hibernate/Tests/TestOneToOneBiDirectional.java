@@ -19,10 +19,20 @@ public class TestOneToOneBiDirectional {
                 Characteristics.class
         )).openSession()){
             transaction = session.beginTransaction();
+
+            // Неправильное двухсторонее сохранение:
             Weapon weapon = new Weapon("AK-47");
             Characteristics characteristics = new Characteristics("assault rifle", "Russia");
-            weapon.setCharacteristics(characteristics);
-            session.persist(weapon);
+            characteristics.setWeapon(weapon);
+            session.persist(characteristics);
+
+            // Правильное двухсторонее сохранение:
+            Weapon weapon_2 = new Weapon("M4A1-S");
+            Characteristics characteristics_2 = new Characteristics("assault rifle", "USA");
+            characteristics_2.setWeapon(weapon_2);
+            weapon_2.setCharacteristics(characteristics_2);
+            session.persist(characteristics_2);
+
             transaction.commit();
         } catch (Exception e){
             e.printStackTrace();

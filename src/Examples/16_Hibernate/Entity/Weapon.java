@@ -1,6 +1,7 @@
 package Entity;
 
 
+import Interfaces_of_annotations.BiDirectional;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -22,6 +23,7 @@ public class Weapon {
     private String name;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "characteristics_id")
+    @BiDirectional(autor = "DAnil Gorev")
     private Characteristics characteristics;
 
     public Weapon() {

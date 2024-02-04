@@ -1,5 +1,6 @@
 package Entity;
 
+import Interfaces_of_annotations.BiDirectional;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -21,6 +22,7 @@ public class Characteristics {
     @Column(name="country")
     private String country;
     @OneToOne(mappedBy = "characteristics", cascade = CascadeType.ALL)
+    @BiDirectional(autor = "Danil Gorev")
     private Weapon weapon;
 
     public Characteristics(){}

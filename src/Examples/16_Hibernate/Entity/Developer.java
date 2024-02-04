@@ -4,6 +4,7 @@ import Interfaces_of_annotations.BiDirectional;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -25,7 +26,9 @@ public class Developer {
     private String surname;
     @Column(name = "salary")
     private int salary;
-    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+
+    // {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH}
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "development_team_id")
     @BiDirectional(autor = "Danil Gorev")
     private DevelopmentTeam developmentTeam;

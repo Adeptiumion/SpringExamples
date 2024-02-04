@@ -26,8 +26,6 @@ public class TestOneToManyBiDirectional {
             developmentTeam.addDeveloper(developer_1);
             developmentTeam.addDeveloper(developer_2);
             session.persist(developmentTeam);
-
-
             transaction.commit();
         } catch (Exception e) {
             e.printStackTrace();

@@ -4,6 +4,7 @@ import Interfaces_of_annotations.BiDirectional;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -26,14 +27,19 @@ public class DevelopmentTeam {
     private int maxSalary;
     @Column(name = "min_salary")
     private int minSalary;
+
+    /*
+    cascade = {
+        CascadeType.DETACH,
+                CascadeType.MERGE,
+                CascadeType.PERSIST,
+                CascadeType.REFRESH
+    }
+    */
     @OneToMany(
-            cascade = {
-            CascadeType.DETACH,
-            CascadeType.MERGE,
-            CascadeType.PERSIST,
-            CascadeType.REFRESH
-    },
-            mappedBy = "developmentTeam"
+            cascade = CascadeType.ALL,
+            mappedBy = "developmentTeam",
+            fetch = FetchType.LAZY // EAGER
     )
     @BiDirectional(autor = "Danil Gorev")
     private List<Developer> developerList;
